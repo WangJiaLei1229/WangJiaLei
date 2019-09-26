@@ -89,4 +89,5 @@ int main(void)
 	printf("被删除的元素：%d", data);
 	printf("\n已经打印");
 	return 0;
+	
 }
