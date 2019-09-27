@@ -7,7 +7,6 @@ typedef enum BOOLEAN
 {
 	true,
 	false
-
 }bool;
 
 //结构栈
