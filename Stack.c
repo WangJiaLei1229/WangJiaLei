@@ -63,4 +63,6 @@ bool CharPop(CharStack cstack, char* ch)
 	}
 	ch = cstack->str[cstack->top--];
 	return true;
+	
 }
+
