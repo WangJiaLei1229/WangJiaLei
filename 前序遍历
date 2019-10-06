@@ -1,0 +1,82 @@
+//BinaryTree.java
+
+package Demo01;
+public class BinaryTree {
+	TreeNode root;
+	//设置跟节点
+	public void setRoot(TreeNode root) {
+		this.root = root;
+	}
+	//获取根节点
+	public TreeNode getRoot() {
+		return root;
+	}
+	//前序遍历
+	public void frontShow() {
+		root.frontShow();
+	}
+}
+
+
+//TreeNode.java
+
+package Demo01;
+public class TreeNode {
+	//根节点
+	int value;
+	//左节点
+	TreeNode lnode;
+	//右节点
+	TreeNode rnode;
+	public TreeNode(int value) {
+		this.value = value;
+	}
+	public void setLnode(TreeNode lnode) {
+		this.lnode = lnode;
+	}
+	public void setRnode(TreeNode rnode) {
+		this.rnode = rnode;
+	}
+	//前序遍历
+	public void frontShow() {
+		//遍历当前节点
+		System.out.println(value);
+		//遍历左节点
+		if(lnode!=null) {
+		lnode.frontShow();
+		}
+		//右节点
+		if(rnode != null) {
+			rnode.frontShow();
+		}
+	}
+}
+
+//Test.java
+
+package Demo01;
+public class BinaryTreeTest {
+	public static void main(String[] args) {
+		//创建一颗树
+		BinaryTree binTree = new BinaryTree();
+		//创建一个节点
+		TreeNode root = new TreeNode(1);
+		binTree.setRoot(root);
+		//设置根节点的左子节点
+		TreeNode rootL = new TreeNode(2);
+		root.setLnode(rootL);
+		//设置根节点的右子节点
+		TreeNode rootR = new TreeNode(3);
+		root.setRnode(rootR);
+		//二层创建
+		rootL.setLnode(new TreeNode(4));
+		rootL.setRnode(new TreeNode(5));
+		
+		rootR.setLnode(new TreeNode(6));
+		rootR.setRnode(new TreeNode(7));
+		
+		//前序遍历
+		binTree.frontShow();
+	}
+}
+
